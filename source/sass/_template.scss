@@ -13,9 +13,8 @@ $susy: (
 body {
 	-webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-	font-family: sans-serif;
+	font: 18px/1.6em sans-serif;
 	overflow-y: scroll;
-	line-height: 1.6em;
 	color: $text-color-dark;
 	margin: 0;
 }
@@ -23,4 +22,46 @@ body {
 .page-wrapper {
 	max-width: 960px;
 	margin: 0 auto;
+}
+
+.to-do {
+
+	border: 1px solid #aaa;
+	padding: 20px;
+	max-width: 400px;
+	margin: 50px auto;
+
+	h3 {
+		margin: 0;
+		text-align: center;
+	}
+
+	input[type="text"] {
+		width: 100%;
+		padding: 5px;
+	}
+}
+
+.tasks {
+	padding: 0;
+	margin: 0;
+	.task {
+		@include clearfix;
+		list-style: none;
+		padding: 20px 0;
+		border-bottom: 1px solid #aaa;
+		&:last-child {
+			border-bottom: 0 none;
+		}
+		input[type="checkbox"] {
+			margin: 0;
+			display: inline-block;
+		}
+		.status-false {
+			color: #000;
+		}
+		.status-true {
+			color: #aaa;
+		}
+	}
 }

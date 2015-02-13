@@ -1,0 +1,22 @@
+<div class="to-do">
+	
+	<h3>{{countTasks()}} Task(s)</h3>
+
+	<br>
+	
+	<form ng-submit="addTask()">
+		<input type="text" ng-model="newTask" placeholder="new Task">
+	</form>
+	
+	<br>
+	
+	<ul class="tasks">
+		<li ng-repeat="task in tasks" class="task">
+			<input type="checkbox" ng-model="task.status">
+			<span class="status-{{task.status}}" ng-bind="task.name"></span>
+		</li>
+	</ul>
+
+	<button class="btn btn-clear" ng-click="clear()">Clear</button>
+
+</div>

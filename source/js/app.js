@@ -6,15 +6,15 @@ var myApp = angular.module('myApp', [
 
 myApp.config(function ($routeProvider) {
     $routeProvider
-    .when('/view1', {
-        templateUrl:'templates/view1.html',
-        controller: 'view1Ctrl'
+    .when('/todo', {
+        templateUrl:'templates/todo.html',
+        controller: 'toDoCtl'
     })
     .when('/view2', {
         templateUrl:'/templates/view2.html',
         controller: 'view2Ctrl'
     })
     .otherwise({
-        redirectTo: '/'
+        redirectTo: '/todo'
     });
 });
