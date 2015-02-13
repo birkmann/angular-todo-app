@@ -10,6 +10,8 @@ $susy: (
 	global-box-sizing: border-box
 );
 
+$button-color: #de4d30;
+
 body {
 	-webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -25,20 +27,35 @@ body {
 }
 
 .to-do {
-
-	border: 1px solid #aaa;
-	padding: 20px;
 	max-width: 400px;
 	margin: 50px auto;
-
 	h3 {
 		margin: 0;
 		text-align: center;
 	}
 
 	input[type="text"] {
+		font: 18px/1.6em sans-serif;
 		width: 100%;
-		padding: 5px;
+		padding: 10px;
+		border: 0 none;
+		border-bottom: 1px solid #eee;
+		outline: 0 none;
+	}
+	.btn-clear {
+		cursor: pointer;
+		width: 100%;
+		font: 18px/1.6em sans-serif;
+		border-radius: 3px;
+		border: 0 none;
+		padding: 10px;
+		outline: 0 none;
+		margin: 10px 0 0 0;
+		background-color: $button-color;
+		color: #fff;
+		&:hover {
+			background-color: darken($button-color, 5%);
+		}
 	}
 }
 
@@ -48,20 +65,24 @@ body {
 	.task {
 		@include clearfix;
 		list-style: none;
-		padding: 20px 0;
-		border-bottom: 1px solid #aaa;
-		&:last-child {
-			border-bottom: 0 none;
+		&:nth-child(odd) {
+   			background-color: #f6f6f6;
 		}
 		input[type="checkbox"] {
-			margin: 0;
-			display: inline-block;
+			display: none;
+		}
+		label {
+			cursor: pointer;
+			display: block;
+			width: 100%;
+			padding: 10px;
 		}
 		.status-false {
-			color: #000;
+			color: #202020;
 		}
 		.status-true {
-			color: #aaa;
+			color: #bbb;
+			text-decoration: line-through;
 		}
 	}
 }

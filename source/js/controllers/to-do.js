@@ -3,9 +3,10 @@
 myApp.controller('toDoCtl', function($scope, $filter) {
 
 	$scope.tasks = [
-		{name: 'Eat', status: true},
-		{name: 'Learn', status: false},
-		{name: 'Sleep', status: false}
+		{name: 'Call Mrs. Jackson', status: true},
+		{name: 'Update Portfolio', status: false},
+		{name: 'Meeting at 10pm', status: false},
+		{name: 'Build a Web App using AngularJS', status: false}
 	];
 
 	$scope.countTasks = function() {
@@ -13,7 +14,6 @@ myApp.controller('toDoCtl', function($scope, $filter) {
 	}
 
 	$scope.addTask = function() {
-
 		$scope.tasks.push({name:$scope.newTask, status:false});
 		$scope.newTask = '';
 	};

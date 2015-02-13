@@ -4,7 +4,8 @@ var myApp = angular.module('myApp', [
     'ngRoute'
 ]);
 
-myApp.config(function ($routeProvider) {
+myApp.config(function ($routeProvider, $locationProvider) {
+
     $routeProvider
     .when('/todo', {
         templateUrl:'templates/todo.html',
@@ -17,4 +18,7 @@ myApp.config(function ($routeProvider) {
     .otherwise({
         redirectTo: '/todo'
     });
+
+    //$locationProvider.html5Mode(true);
+
 });
